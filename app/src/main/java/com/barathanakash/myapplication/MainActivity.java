@@ -9,6 +9,7 @@ import android.view.View;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.media.MediaPlayer;
 import android.media.AudioManager;
@@ -21,6 +22,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int b = 0;
     int c = 0;
     int d = 0;
+    EditText ed;
+    TextView tV;
+    SeekBar sb;
+    int seekValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +42,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         four.setOnClickListener(this);
 
 
+        tV=findViewById(R.id.text_view1);
+        sb=findViewById(R.id.seekBar);
 
+        sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                seekValue=progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                String temp = "processing";
+                tV.setText(temp);
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                tV.setTextSize(seekValue );
+            }
+        });
 
     }
 
