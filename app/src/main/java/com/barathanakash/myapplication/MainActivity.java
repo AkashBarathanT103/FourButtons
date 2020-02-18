@@ -1,18 +1,11 @@
 package com.barathanakash.myapplication;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.widget.Button;
 import android.view.View;
-import android.util.Log;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.media.MediaPlayer;
-import android.media.AudioManager;
 import android.widget.Toast;
 import android.content.SharedPreferences;
 
@@ -53,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                String temp = "processing";
+                String temp = "Hello World!";
                 tV.setText(temp);
             }
 
